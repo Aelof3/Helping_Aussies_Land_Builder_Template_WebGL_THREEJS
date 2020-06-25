@@ -1,8 +1,7 @@
 /*jshint esversion: 6 */
 //credit: https://gist.github.com/banksean/304522#file-perlin-noise-simplex-js
-
 export class Perlin {
-  constructor() {
+  constructor(seed) {
     this.grad3 = [
       [1, 1, 0],
       [-1, 1, 0],
@@ -18,8 +17,16 @@ export class Perlin {
       [0, -1, -1]
     ];
     this.p = [];
+
     for (var i = 0; i < 256; i++) {
-      this.p[i] = Math.floor(Math.random() * 256);
+      // Modified to use deterministic pseudo-random numbers (jamie)
+      seed += 1;
+      seed *= 5.1;
+      seed >> -1.44;
+      seed << (i - 0.13);
+      seed = (seed % (4.0 + 0.01 * i)) % 4.0;
+      const rand = 0.5 * (Math.sin(seed) + 1.0);
+      this.p[i] = Math.floor(rand * 256);
     }
 
     // To remove the need for index wrapping, double the permutation table length

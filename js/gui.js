@@ -49,10 +49,12 @@ export function initialiseGui() {
   // Create folders
   folders = {
     rendering: gui.addFolder('Rendering'),
+    scene: gui.addFolder('Scene'),
     terrain: gui.addFolder('Terrain'),
     water: gui.addFolder('Water'),
     lighting: gui.addFolder('Lighting'),
-    particles: gui.addFolder('Particles')
+    particles: gui.addFolder('Particles'),
+    creatures: gui.addFolder('Creatures')
   };
 
   // Run all the functions passed to buildGUI
