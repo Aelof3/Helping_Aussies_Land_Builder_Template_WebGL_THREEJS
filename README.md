@@ -1,1 +1,5 @@
-# Helping_Aussies_Land_Builder_Template_WebGL_THREEJS
+# IslandGenerator
+
+Computer Graphics 2020
+
+https://chaoszeroomega.github.io/IslandGenerator/
